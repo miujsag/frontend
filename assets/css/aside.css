@@ -1,0 +1,106 @@
+aside {
+  position: fixed;
+  z-index: 1;
+  top: 132px;
+  left: 0;
+  height: 100%;
+  width: 200px;
+  background: #0E1530;
+  color: white;
+  padding: 0 20px 0 15px;
+  transition: transform .5s;
+  overflow-y: auto;
+}
+
+.checkbox-list {
+  margin: 30px 0 132px;
+}
+
+.checkbox-list .checkbox-button label {
+  margin-bottom: 12px;
+  color: white;
+  text-transform: capitalize;
+}
+
+aside h3 {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+aside .mobile-show {
+  justify-content: center;
+}
+
+aside .close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 15px;
+}
+
+aside .widgets-container {
+  width: 100%;
+}
+
+aside .widgets {
+  width: 100%;
+  max-width: 320px;
+  margin: 25px auto 50px;
+}
+
+aside .widgets .inline {
+  justify-content: center;
+}
+
+aside .calendar {
+  text-align: center;
+}
+
+aside .weather,
+aside .rates {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  height: 52px;
+  border: 2px solid #ED4568;
+  border-left: 0;
+  border-right: 0;
+}
+
+aside .weather {
+  width: 100%;
+  border-right: 1px solid #ED4568;
+}
+
+aside .rates {
+  width: 100%;
+  border-left: 1px solid #ED4568;
+}
+
+aside .rates p {
+  margin-top: 5px;
+}
+
+@media (max-width: 1025px) {
+  aside {
+    top: 0;
+    width: 100%;
+    padding-top: 50px;
+    text-align: center;
+    transform: translate(100%);
+  }
+
+  aside.active {
+    transform: translate(0);
+  }
+
+  .checkbox-list {
+    margin: 0 0 30px;
+    padding-left: 0;
+  }
+
+  aside h3 {
+    margin: 25px 0
+  }
+}

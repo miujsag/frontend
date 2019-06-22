@@ -1,0 +1,21 @@
+require('dotenv').config()
+const express = require('express')
+const hbs = require('hbs')
+const morgan = require('morgan')
+const cookieParser = require('cookie-parser')
+const {join} = require('path')
+const viewHelpers = require('./lib/views/helpers')
+
+const app = express()
+
+app.use(morgan('dev'))
+app.use(cookieParser())
+app.set('views', './lib/views/')
+app.set('view engine', 'hbs')
+app.engine('hbs', require('hbs').__express)
+hbs.registerPartials(join(__dirname, '/lib/views/partials'))
+viewHelpers()
+app.use(express.static(join(__dirname, '/public'), { maxAge: 86400000 }))
+app.use('/', require('./lib/router'))
+
+app.listen(process.env.PORT)
