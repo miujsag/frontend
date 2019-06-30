@@ -3,18 +3,20 @@ const {truncate, convertToMinutes, formatDatetime} = require('../../lib/views/he
 
 const articleList = document.querySelector('.articles')
 const siteCheckboxes = Array.from(document.querySelectorAll('.site input'))
-const categoryCheckboxes = Array.from(document.querySelectorAll('.category input'))
+const categoryCheckboxes = Array.from(document.querySelectorAll('.sub-header .category input'))
 const loadMoreButton = document.querySelector('.load-more')
 const menuButton = document.querySelector('.menu-button')
 const sidebarCloseButton = document.querySelector('aside .close-button')
 const sidebar = document.querySelector('aside')
+const searchForm = document.querySelector('.search-form')
+const searchInput = document.querySelector('.search-form input[type="search"')
 
-function getSelectedSites () {
-  const selectedSitesFromCookies = getCookie('sites')
+function getSelected (type, checkboxes) {
+  const selectedFromCookies = getCookie(type)
 
-  if (!selectedSitesFromCookies) {
-    const selectedSites = checkboxesToParams('sites', siteCheckboxes)
-    document.cookie = selectedSites.split(',').join('.')
+  if (!selectedFromCookies) {
+    const selectedItems = checkboxesToParams(type, checkboxes)
+    document.cookie = selectedItems.split(',').join('.')
   }
 }
 
@@ -41,12 +43,27 @@ function updateArticles (_event, isLoadMore = false) {
   const lastArticlesDateTime = lastArticle ? lastArticle.getAttribute('datetime') : new Date()
 
   document.cookie = siteParams.split(',').join('.')
+  document.cookie = categoryParams.split(',').join('.')
 
   const till = isLoadMore ? lastArticlesDateTime : ''
   
   fetch(`/api/articles?${siteParams}&${categoryParams}&till=${till}`)
     .then(response => response.json())
     .then(articles => renderArticles(articles, isLoadMore))
+    .catch(renderError)
+}
+
+function search (event, isLoadMore = false) {
+  const {value} = searchInput
+  const siteParams = checkboxesToParams('sites', siteCheckboxes)
+  const categoryParams = checkboxesToParams('categories', categoryCheckboxes)
+
+  fetch(`/api/articles/search?query=${value}&${siteParams}&${categoryParams}`)
+    .then(response => response.json())
+    .then(articles => {
+      console.log(articles)
+      renderArticles(articles, isLoadMore)
+    })
     .catch(renderError)
 }
 
@@ -104,10 +121,12 @@ function toggleMenu () {
   sidebar.classList.toggle('active')
 }
 
-getSelectedSites()
+getSelected('sites', siteCheckboxes)
+getSelected('categories', categoryCheckboxes)
 
 siteCheckboxes.forEach(checkbox => checkbox.addEventListener('change', updateArticles))
 categoryCheckboxes.forEach(checkbox => checkbox.addEventListener('change', updateArticles))
 loadMoreButton.addEventListener('click', event => updateArticles(event, true))
 menuButton.addEventListener('click', toggleMenu)
 sidebarCloseButton.addEventListener('click', toggleMenu)
+/* searchForm.addEventListener('submit', search) */

@@ -1,0 +1,53 @@
+<form class="search-box">
+  <h2>Keresés</h2>
+  <div class="form-group">
+    <input type="text" name="search" value={{ query }} placeholder="Milyen hír érdekel?">
+  </div>
+  <div class="form-group inline date-container">
+    <div class="form-group">
+      <fieldset>
+        <legend>
+          <span>Innentől</span>
+        </legend>
+        <div class="form-date inline">
+          <div class="form-group form-group-year">
+            <label class="form-label" for="from-year">Év</label>
+            <input class="form-control" id="from-year" name="from-year" value={{ getYear from }} type="number" pattern="[0-9]*">
+          </div>
+          <div class="form-group form-group-month">
+            <label class="form-label" for="from-month">Hónap</label>
+            <input class="form-control" id="from-month" name="from-month" value={{ getMonth from }} type="number" pattern="[0-9]*">
+          </div>
+          <div class="form-group form-group-day">
+            <label class="form-label" for="from-day">Nap</label>
+            <input class="form-control" id="from-day" name="from-day" value={{ getDay from }} type="number" pattern="[0-9]*">
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="form-group">
+      <fieldset>
+        <legend>
+          <span>Idáig</span>
+        </legend>
+        <div class="form-date inline">
+          <div class="form-group form-group-year">
+            <label class="form-label" for="to-year">Év</label>
+            <input class="form-control" id="to-year" name="to-year" value={{ getYear until }} type="number" pattern="[0-9]*">
+          </div>
+          <div class="form-group form-group-month">
+            <label class="form-label" for="to-month">Hónap</label>
+            <input class="form-control" id="to-month" name="to-month" value={{ getMonth until }} type="number" pattern="[0-9]*">
+          </div>
+          <div class="form-group form-group-day">
+            <label class="form-label" for="to-day">Nap</label>
+            <input class="form-control" id="to-day" name="to-day" value={{ getDay until }} type="number" pattern="[0-9]*">
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <button type="submit">hírek keresése</button>
+  <a href="/">vissza a hírlista oldalra</a>
+</form>
+{{> articles }}

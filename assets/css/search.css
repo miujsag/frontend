@@ -1,0 +1,97 @@
+.search-box {
+  max-width: 660px;
+  width: 100%;
+  margin: 0 auto;
+  background: white;
+  border-radius: 15px;
+  -webkit-box-shadow: 1px 1px 5px 0px rgba(102,102,102,0.5);
+  -moz-box-shadow: 1px 1px 5px 0px rgba(102,102,102,0.5);
+  box-shadow: 1px 1px 5px 0px rgba(102,102,102,0.5);
+  padding: 30px 60px;
+}
+
+.search-box .form-group {
+  margin-bottom: 15px;
+}
+
+.search-box .date-container {
+  margin-bottom: 0;
+}
+
+.date-container > .form-group {
+  width: 45%;
+}
+
+.search-box h2 {
+  margin-bottom: 25px;
+  color: #132054;
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.search-box legend span {
+  display: block;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  color: #132054;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.search-box label {
+  display: block;
+  margin-bottom: 10px;
+  color: #132054;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.search-box input {
+  height: 45px;
+  width: 55px;
+  border: 2px solid #132054;
+  border-radius: 5px;
+  padding: 0 15px;
+}
+
+.search-box .form-group-year input {
+  width: 90px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button,
+.search-box input[type="number"] {
+  appearance: textfield;
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.search-box input[name="search"] {
+  width: 100%;
+  background: url('../static/images/search.svg') calc(100% - 15px) center no-repeat
+}
+
+.search-box button[type="submit"] {
+  width: 100%;
+  height: 45px;
+  margin: 0 auto 20px;
+  background: #132054;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.search-box .categories {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  padding-left: 0;
+}
+
+.search-box .categories li {
+}

@@ -45,26 +45,28 @@
       </li>
     </ul>
   </div>
-  <div class="sub-header inline">
-    <div class="inline">
-      <button class="aside-toggle" type="button">
-        Hírek forrásai 
-        <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2.31092 0.492081L6.96631 5.23738L11.6217 0.492081L12.9663 1.86266L6.96631 7.97854L0.966309 1.86266L2.31092 0.492081Z" fill="white"/>
-        </svg>
-      </button>
-      <ul class="categories inline">
-        {{#each categories as |category|}}
-          <li class="category checkbox-button">
-            <input type="checkbox" value="{{category.id}}" name="category" id="category-{{category.id}}" checked="true">
-            <label for="category-{{category.id}}">{{category.name}}</label>
-          </li>
-        {{/each}}
-      </ul>
+    <div class="sub-header inline">
+      <div class="inline">
+        <button class="aside-toggle" type="button">
+          Hírek forrásai 
+          <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.31092 0.492081L6.96631 5.23738L11.6217 0.492081L12.9663 1.86266L6.96631 7.97854L0.966309 1.86266L2.31092 0.492081Z" fill="white"/>
+          </svg>
+        </button>
+        <ul class="categories inline">
+          {{#each categories as |category|}}
+            <li class="category checkbox-button">
+              <input type="checkbox" value="{{category.id}}" name="category" id="category-{{category.id}}" checked="true">
+              <label for="category-{{category.id}}">{{category.name}}</label>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+      <form class="search-form inline" action="/kereses" method="GET">
+        <input type="search" name="query" placeholder="Milyen hír érdekel?">
+        <input type="hidden" name="from" value={{getLastMonthsDate}}>
+        <input type="hidden" name="until" value={{getCurrentDate}}>
+        <button type="submit">keresés</button>
+      </form>
     </div>
-    <form class="search-form inline">
-      <input type="search" placeholder="Milyen hír érdekel?">
-      <button type="button">keresés</button>
-    </form>
-  </div>
 </header>
