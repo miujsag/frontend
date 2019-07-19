@@ -1,5 +1,9 @@
 import css from "../css/app.css"
 const {truncate, convertToMinutes, formatDatetime} = require('../../lib/views/helpers/articles')
+import flatpickr from 'flatpickr'
+import { Hungarian } from 'flatpickr/dist/l10n/hu.js'
+import '../../node_modules/flatpickr/dist/flatpickr.min.css'
+import pikaday from 'pikaday'
 
 const articleList = document.querySelector('.articles')
 const siteCheckboxes = Array.from(document.querySelectorAll('.site input'))
@@ -10,6 +14,13 @@ const sidebarCloseButton = document.querySelector('aside .close-button')
 const sidebar = document.querySelector('aside')
 const searchForm = document.querySelector('.search-form')
 const searchInput = document.querySelector('.search-form input[type="search"')
+
+flatpickr("#date-from", {
+  locale: Hungarian
+})
+flatpickr("#date-to", {
+  locale: Hungarian
+})
 
 function getSelected (type, checkboxes) {
   const selectedFromCookies = getCookie(type)
