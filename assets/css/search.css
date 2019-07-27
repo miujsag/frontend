@@ -1,7 +1,7 @@
 .search-box {
   max-width: 660px;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto 20px;
   background: white;
   border-radius: 15px;
   -webkit-box-shadow: 1px 1px 5px 0px rgba(102,102,102,0.5);
@@ -10,6 +10,7 @@
   padding: 30px 60px;
 }
 
+.search-modal .form-group,
 .search-box .form-group {
   margin-bottom: 15px;
 }
@@ -18,6 +19,7 @@
   width: 45%;
 }
 
+.search-modal h2,
 .search-box h2 {
   margin-bottom: 25px;
   color: #132054;
@@ -26,6 +28,8 @@
   text-align: center;
 }
 
+
+.search-modal legend span,
 .search-box legend span {
   display: block;
   margin-bottom: 15px;
@@ -35,6 +39,8 @@
   font-weight: bold;
 }
 
+
+.search-modal label,
 .search-box label {
   display: block;
   margin-bottom: 10px;
@@ -43,6 +49,8 @@
   font-weight: bold;
 }
 
+
+.search-modal input,
 .search-box input {
   height: 45px;
   margin-bottom: 5px;
@@ -51,6 +59,7 @@
   padding: 0 15px;
 }
 
+.search-modal .form-group-year input,
 .search-box .form-group-year input {
   width: 90px;
 }
@@ -63,15 +72,17 @@ input[type=number]::-webkit-outer-spin-button,
   -moz-appearance: textfield;
 }
 
+.search-modal input[name="search"],
 .search-box input[name="search"] {
   width: 100%;
   background: url('../static/images/search.svg') calc(100% - 15px) center no-repeat;
 }
 
+.search-modal button[type="submit"],
 .search-box button[type="submit"] {
   width: 100%;
   height: 45px;
-  margin: 0 auto 20px;
+  margin: 0 auto 15px;
   background: #132054;
   border: 0;
   border-radius: 5px;
@@ -92,6 +103,14 @@ input[type=number]::-webkit-outer-spin-button,
 .date-input {
   width: 49%;
   background: url('../static/images/calendar.svg') calc(100% - 15px) center no-repeat
+}
+
+.search-back {
+  font-size: 13px;
+}
+
+.search-back svg {
+  margin-right: 5px;
 }
 
 /* flatpickr */
@@ -124,4 +143,43 @@ input[type=number]::-webkit-outer-spin-button,
   background: #132054 !important;
   border-color: #132054 !important;
   color: white !important;
+}
+
+.search-modal {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  margin-bottom: 20px;
+  border-radius: 0;
+  padding: 30px 15px;
+  transition: transform .5s;
+  transform: translate(100%);
+}
+
+.search-modal.active {
+  transform: translate(0);
+}
+
+.search-close {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+}
+
+.search-close svg {
+  height: 35px;
+  width: 35px;
+  fill: #132054;
+}
+
+@media (max-width: 734px) {
+  .search-box {
+    width: 100%;
+    border-radius: 0;
+    padding: 30px 5%;
+  }
 }

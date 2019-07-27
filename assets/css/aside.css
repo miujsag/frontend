@@ -1,6 +1,6 @@
 aside {
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 132px;
   left: 0;
   height: 100%;
@@ -87,11 +87,11 @@ aside .rates p {
     top: 0;
     width: 100%;
     padding-top: 50px;
+    transform: translate(-100%);
     text-align: center;
-    transform: translate(100%);
   }
 
-  aside.active {
+  aside.mobile-active {
     transform: translate(0);
   }
 

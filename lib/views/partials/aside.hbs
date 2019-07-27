@@ -36,8 +36,12 @@
       <ul class="categories checkbox-list">
         {{#each categories as |category|}}
           <li class="category checkbox-button">
-            <input type="checkbox" value="{{category.id}}" name="category" id="category-{{category.id}}" checked="true">
-            <label for="category-{{category.id}}">{{category.name}}</label>
+            {{#if category.isSelected}}
+              <input type="checkbox" value="{{category.id}}" name="category" id="mobile-category-{{category.id}}" checked>
+            {{else}}
+              <input type="checkbox" value="{{category.id}}" name="category" id="mobile-category-{{category.id}}">
+            {{/if}}
+            <label for="mobile-category-{{category.id}}">{{category.name}}</label>
           </li>
         {{/each}}
       </ul>
