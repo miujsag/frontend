@@ -44,6 +44,9 @@
     </div>
   </div>
   <ul class="sites checkbox-list">
+    <li>
+      <button type="button" class="toggle-select-all">Összes</button>
+    </li>
     {{#each sites as |site|}}
       <li class="site checkbox-button">
         {{#isSelected site.isSelected}}

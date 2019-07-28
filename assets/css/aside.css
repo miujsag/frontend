@@ -86,6 +86,27 @@ aside .rates p {
   margin-top: 5px;
 }
 
+.toggle-select-all {
+  min-width: 135px;
+  height: 35px;
+  margin-bottom: 45px;
+  background: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.toggle-select-all.active {
+  background: #ED4568;
+  border-color: #ED4568;
+}
+
+
 @media (max-width: 1025px) {
   aside {
     top: 0;
