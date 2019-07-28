@@ -1,4 +1,6 @@
 {{> articles }}
 <div class="load-more-container">
-  <button type="button" name="load-more" class="load-more">Még több cikk</button>
+  {{#if isMore}}
+    <button type="button" name="load-more" class="load-more">Még több cikk</button>
+  {{/if}}
 </div>
