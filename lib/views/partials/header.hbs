@@ -36,11 +36,6 @@
         <p>
           {{#each rates as |rate|}}
             {{rate.currency}} {{rate.value}}
-            {{#if rate.didGrow}}
-              <span class="did-grow"><img src="images/arrow.svg"></span>
-            {{else}}
-              <span><img src="images/arrow.svg"></span>
-            {{/if}}
             <br/>
           {{/each}}
         </p>
