@@ -3,6 +3,7 @@ import {getCheckedValues} from './form'
 
 const siteCheckboxes = Array.from(document.querySelectorAll('.site input'))
 const sidebar = document.querySelector('aside')
+const main = document.querySelector('main')
 const sidebarButton = document.querySelector('.aside-toggle')
 const closeButton = document.querySelector('.close-button')
 const mobileCategoryCheckboxes = Array.from(document.querySelectorAll('aside .category input'))
@@ -30,6 +31,7 @@ export function mobileCategoryCheckboxesOnChange (eventHandler) {
 
 function toggleSidebar () {
   sidebar.classList.toggle('active')
+  main.classList.toggle('active')
 }
 
 function changeCategoryCheckbox () {

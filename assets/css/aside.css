@@ -12,6 +12,10 @@ aside {
   overflow-y: auto;
 }
 
+aside.active {
+  transform: translateX(-100%);
+}
+
 .checkbox-list {
   margin: 30px 0 132px;
 }
