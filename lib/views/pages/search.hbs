@@ -10,7 +10,7 @@
       <input type="text" class="date-input" name="until" placeholder="Idáig" value={{until}} />
     </div>
   </div>
-  <button type="submit">hírek keresése</button>
+  <button type="submit" name="submit-search">hírek keresése</button>
   <a href="/" class="search-back">
     <svg width="6" height="9" viewBox="0 0 6 9" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M5.3885 1.83608L2.40335 4.76467L5.3885 7.69326L4.5263 8.53912L0.678955 4.76467L4.5263 0.990222L5.3885 1.83608Z" fill="#132054"/>
@@ -21,6 +21,6 @@
 {{> articles }}
 {{#if loadMore}}
   <div class="load-more-container">
-    <button type="button" class="load-more">Még több találat</button>
+    <button type="button" class="load-more" name="load-more">Még több találat</button>
   </div>
 {{/if}}
