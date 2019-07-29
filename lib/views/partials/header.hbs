@@ -65,7 +65,7 @@
     </div>
     {{#if subheaderActive}}
       <form class="search-form inline" action="/kereses" method="GET">
-        <input type="search" name="search" placeholder="Milyen hír érdekel?">
+        <input type="search" name="search">
         <input type="hidden" name="from" value={{getLastWeeksDate}}>
         <input type="hidden" name="until" value={{getCurrentDate}}>
         <button type="submit" name="submit-search">keresés</button>
