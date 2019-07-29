@@ -18,7 +18,10 @@ function updateArticles (_event, isLoadMore = false) {
   
   fetch(`/api/articles?sites=${siteIds.join(',')}&categories=${categoryIds.join(',')}&until=${until}`)
     .then(response => response.json())
-    .then(({articles}) => renderArticles(articles, isLoadMore))
+    .then(({isMore, articles}) => {
+      renderArticles(articles, isLoadMore)
+      renderLoadMoreButton(isMore)
+    })
     .catch(renderError)
 }
 
