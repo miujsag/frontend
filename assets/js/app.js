@@ -39,7 +39,7 @@ flatpickr('.search-modal input[name="from"]', {locale: Hungarian})
 flatpickr('.search-modal input[name="until"]', {locale: Hungarian})
 
 const searchForm = document.querySelector('.search-box')
-const searchInput = document.querySelector('.search-box input[name="search"')
+const searchInput = document.querySelector('.search-box input[name="search"]')
 const fromInput = document.querySelector('.search-box input[name="from"]')
 const untilInput = document.querySelector('.search-box input[name="until"]')
 
