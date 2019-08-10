@@ -95,6 +95,13 @@
   width: auto;
 }
 
+.article .highlight em {
+  background: #ED4568;
+  color: white;
+  font-weight: bold;
+  padding: 0 2px;
+}
+
 .article .logo-hvg {
   height: 18px;
 }
