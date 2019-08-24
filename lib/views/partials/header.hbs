@@ -51,6 +51,9 @@
         </svg>
       </button>
       <ul class="categories inline">
+        <li>
+          <button type="button" class="toggle-categories">Összes</button>
+        </li>
         {{#each categories as |category|}}
           <li class="category checkbox-button">
             {{#if category.isSelected}}

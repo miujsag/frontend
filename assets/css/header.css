@@ -150,6 +150,23 @@
   font-weight: bold;
 }
 
+.toggle-categories {
+  display: block;
+  width: 100px;
+  height: 36px;
+  border: 2px solid #132054;
+  border-radius: 5px;
+  color: #132054;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.toggle-categories.active {
+  background: #ED4568;
+  border-color: #ED4568;
+  color: white;
+}
+
 @media (max-width: 1025px) {
   .main-header,
   .sub-header {
