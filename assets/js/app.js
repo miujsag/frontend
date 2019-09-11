@@ -1,5 +1,6 @@
 import css from "../css/app.css"
 import {setCookie} from './cookie'
+import {renderError, cleanErrpr} from './error'
 import {getCheckedValues} from './form'
 import {getCategoryCheckboxes, categoryCheckboxesOnChange} from './header'
 import {getSiteCheckboxes, siteCheckboxesOnChange} from './sidebar'
@@ -72,10 +73,6 @@ function loadMoreSearchResults () {
   search(null, true, articlesLength)
 }
 
-function renderError (error) {
-  console.log(error.message)
-}
-
 /* EVENTS */
 if (document.querySelector('.search-box')) {
   siteCheckboxesOnChange(search)
@@ -88,4 +85,3 @@ if (document.querySelector('.search-box')) {
   categoryCheckboxesOnChange(updateArticles)
   loadMoreButtonOnClick(loadMoreArticles)
 }
-

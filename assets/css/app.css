@@ -7,4 +7,5 @@
 @import "./main.css";
 @import "./articles.css";
 @import "./search.css";
-@import '../../node_modules/pikaday/css/pikaday.css'
+@import "./error.css";
+@import '../../node_modules/pikaday/css/pikaday.css';

@@ -3,6 +3,17 @@ import {truncate, convertToMinutes, formatDatetime} from '../../lib/views/helper
 const articleList = document.querySelector('.articles')
 const loadMoreButton = document.querySelector('.load-more')
 
+function renderHighlightsOrDescription (article) {
+  console.log(article.highlights)
+  if (article.highlights) {
+    return article.highlights
+      .map(highlight => `<p class="highlight">${highlight}</p>`)
+      .join('')
+  } else {
+    return `<p>${truncate(article.description)}</p>`
+  }
+} 
+
 export function renderArticles (articles, isLoadMore) {
   if (!isLoadMore) {
     articleList.innerHTML = ''
@@ -26,7 +37,7 @@ export function renderArticles (articles, isLoadMore) {
             ${article.title}
           </a>
         </h2>
-        <p>${truncate(article.description)}</p>
+        ${renderHighlightsOrDescription(article)}
       </div>
       <footer>
       ${renderEstimatedReadTime(article.estimatedReadTime)}

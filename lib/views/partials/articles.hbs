@@ -13,7 +13,13 @@
             {{article.title}}
           </a>
         </h2>
-        <p>{{{truncate article.description}}}</p>
+        {{#if article.highlights}}
+          {{#each article.highlights as |highlight|}}
+            <p class="highlight">{{{truncate highlight}}}</p>
+          {{/each}}
+        {{else}}
+          <p>{{{truncate article.description}}}</p>
+        {{/if}}
       </div>
       <footer>
         <div class="estimated-read-time">
