@@ -13,6 +13,11 @@
   color: white;
 }
 
+.main-header h1 svg {
+  width: 130px;
+  height: auto;
+}
+
 .main-header p {
   font-size: 12px;
 }
@@ -158,6 +163,10 @@
   }
   .sub-header {
     display: none;
+  }
+
+  .main-header h1 svg {
+    width: 50px;
   }
 
   .search-form input {
