@@ -38,7 +38,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "webpack --mode production",
-    "watch": "webpack --mode development --watch"
+    "watch": "webpack --mode development --watch",
+    "seed": "node bin/seed.js"
   },
   "keywords": [],
   "author": "",
