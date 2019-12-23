@@ -1,14 +1,13 @@
 const errorContainer = document.querySelector('.error')
 const errorText = document.querySelector('.error p')
-const defaultErrorText = 'Valami hiba történt. Kérlek próbáld újra! <br> Ha továbbra sem működik, <a href="mailto:hello@miujsag.org">kérlek jelezd</a>'
+const defaultErrorText = 'Valami hiba történt. Próbáld újra! <br> Ha továbbra sem működik, <a href="mailto:hello@miujsag.org">kérlek jelezd</a>'
 
 function cleanError () {
-  errorContainer.style.display = 'none'
+  errorContainer.classList.remove = 'active'
 }
 
-function renderError (error, message) {
-  errorContainer.style.display = 'block'
-  errorText.innerHTML = message
+function renderError (error) {
+  errorContainer.classList.add = 'active'
 
   console.log(error.message)
 }

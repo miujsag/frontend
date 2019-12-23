@@ -1,6 +1,6 @@
 import css from "../css/app.css"
 import {setCookie} from './cookie'
-import {renderError, cleanErrpr} from './error'
+import {renderError, cleanError} from './error'
 import {getCheckedValues} from './form'
 import {getCategoryCheckboxes, categoryCheckboxesOnChange} from './header'
 import {getSiteCheckboxes, siteCheckboxesOnChange} from './sidebar'
@@ -20,6 +20,7 @@ function updateArticles (_event, isLoadMore = false) {
   fetch(`/api/articles?sites=${siteIds.join(',')}&categories=${categoryIds.join(',')}&until=${until}`)
     .then(response => response.json())
     .then(({isMore, articles}) => {
+      cleanError()
       renderArticles(articles, isLoadMore)
       renderLoadMoreButton(isMore)
     })
