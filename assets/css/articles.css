@@ -1,16 +1,16 @@
 .articles {
-  width: 100%;
-  flex-wrap: wrap;
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: repeat(auto-fill, 320px);
+  column-gap: 20px;
+  row-gap: 40px;
   justify-content: center;
 }
 
 .article {
   position: relative;
-  width: 90%;
-  max-width: 320px;
   height: auto;
   min-height: 330px;
-  margin: 20px 10px;
   background: white;
   border-radius: 5px;
   padding: 0 20px;
@@ -172,7 +172,11 @@
   }
 }
 
-@media (max-width: 734px) {
+@media (max-width: 360px) {
+  .articles {
+    grid-template-columns: repeat(auto-fill, 90%);
+  }
+
  .article,
  .article-body {
     height: auto;
