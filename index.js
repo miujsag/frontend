@@ -12,6 +12,7 @@ const {handleError} = require('./lib/handlers/error')
 const {notFound} = require('./lib/controllers/page')
 
 const app = express()
+const port = process.env.PORT
 
 app.use(morgan('dev'))
 app.use(cookieParser())
@@ -28,4 +29,6 @@ app.use('/', require('./lib/router'))
 app.get('*', notFound)
 app.use(handleError)
 
-app.listen(process.env.PORT)
+app.listen(port, function () {
+  console.log(`App is running on port ${port}`)
+})
