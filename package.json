@@ -25,6 +25,8 @@
     "morgan": "^1.9.1",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "pikaday": "^1.8.0",
+    "sass": "^1.24.0",
+    "sass-loader": "^8.0.0",
     "search": "git://github.com/miujsag/search.git",
     "style-loader": "^0.23.1",
     "terser-webpack-plugin": "^1.3.0",
@@ -38,6 +40,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "webpack --mode production",
+    "build": "webpack --mode development",
     "watch": "webpack --mode development --watch",
     "seed": "node bin/seed.js"
   },

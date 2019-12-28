@@ -1,4 +1,4 @@
-import css from "../css/app.css"
+import css from "../css/app.scss"
 import {setCookie} from './cookie'
 import {renderError, cleanError} from './error'
 import {getCheckedValues} from './form'
@@ -34,7 +34,7 @@ function loadMoreArticles () {
 /* SEARCH */
 import flatpickr from 'flatpickr'
 import { Hungarian } from 'flatpickr/dist/l10n/hu.js'
-import '../../node_modules/flatpickr/dist/flatpickr.min.css'
+//import '../../node_modules/flatpickr/dist/flatpickr.min.css'
 flatpickr('.search-box input[name="from"]', {locale: Hungarian})
 flatpickr('.search-box input[name="until"]', {locale: Hungarian})
 flatpickr('.search-modal input[name="from"]', {locale: Hungarian})

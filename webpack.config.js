@@ -32,8 +32,15 @@ module.exports = (env, options) => ({
         }
       },
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        test: /\.s[ac]ss$/i,
+        use: [
+          // fallback to style-loader in development
+          process.env.NODE_ENV !== 'production'
+            ? 'style-loader'
+            : MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(jpe?g|png|gif|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/,
